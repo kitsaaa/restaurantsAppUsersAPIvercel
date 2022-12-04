@@ -79,7 +79,7 @@ app.delete("/api/posts/:id", (req,res)=>{
 
 // Connect to the DB and start the server
 
-data.connect().then(()=>{
+data.connect({useUnifiedTopology: true}).then(()=>{
     app.listen(HTTP_PORT, ()=>{console.log("API listening on: " + HTTP_PORT)});
 })
 .catch((err)=>{
